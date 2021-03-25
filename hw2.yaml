@@ -1,0 +1,31 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: 'HW2'
+Parameters:
+  Prefix:
+    Description: 'Prefix'
+    Type: 'String'
+    Default: 'hw2-cf'
+
+  # AppVersion:
+  #   Type: 'String'
+  #   Default: '1.0.0-6'
+
+Resources:
+  S3BucketImageUpload:
+    Type: 'AWS::S3::Bucket'
+    Properties:
+      BucketName: !Sub '${Prefix}-image-upload-${AWS::Region}'
+
+  # RoleLambdaS3Upload:
+  #   Type: AWS::IAM::Role
+  #   Properties:
+  #     Description: 'Lambda S3 upload'
+
+  # LambdaS3Upload:
+  #   Type: 'AWS::Lambda::Function'
+  #   Properties:
+  #     Code:
+  #       S3Bucket: 'raymond-packages-us-west-2'
+  #       S3Key: !Sub lambda-example-${AppVersion}.zip
+
+  # Template
